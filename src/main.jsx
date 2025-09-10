@@ -1,9 +1,16 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from '@/App.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "@/App.jsx";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 
-createRoot(document.getElementById('root')).render(
+// Globals css
+import "@/styles/global.css";
+import "@/styles/themeTransition.css";
+
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </StrictMode>
+);
